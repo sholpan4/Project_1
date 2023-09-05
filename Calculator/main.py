@@ -12,6 +12,12 @@ def swich_mode(name):
         view = AccountCalcViev()
         view.set_model(model)
         window.set_view(view)
+        
+    if name == ""
+        model = MathCalcMorel()
+        view = MathCalcView()
+        view.set_model(model)
+        window.set_view(view)
 
 
 if __name__ == '__main__':
