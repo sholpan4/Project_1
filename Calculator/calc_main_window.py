@@ -12,6 +12,8 @@ class CalcMainWindow(QMainWindow):
 
 
     def set_view(self, view):
+        if self.calc_view:
+            self.calc_view = view.hide()
         self.calc_view = view
         # self.setCentralWidget(self.calc_view)
         self.calc_layout.addWidget(self.calc_view, 1, 0)

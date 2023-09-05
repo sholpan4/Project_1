@@ -4,7 +4,6 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
 
 
-
 class SimpleCalcView(QWidget):
     calc_model = None
 
@@ -15,7 +14,13 @@ class SimpleCalcView(QWidget):
         self.result_label.setText(self.calc_model.get_display())
 
     def keyPressEvent(self, event):
+        print(event.key(), Qt.Key.Key_Backspace)
         key_text = event.text()
+        if event.key() == Qt.Key.Key_Backspace:
+            key_text = 'C'
+        elif event.key() == Qt.Key.Key_Return or event.key() == Qt.Key.Key_Enter:
+            key_text = '='
+            
         self.calc_model.command(key_text)
         self.result_label.setText(self.calc_model.get_display())
     def __init__(self):
@@ -57,7 +62,7 @@ class SimpleCalcView(QWidget):
         self.result_label.setText(self.calc_model.get_display())
 
 
-class AccountCalcViev(SimpleCalcView):
+class AccountCalcView(SimpleCalcView):
     def __init__(self):
         super().__init__()
         keys_layout = QGridLayout()
