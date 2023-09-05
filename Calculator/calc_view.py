@@ -74,3 +74,7 @@ class AccountCalcViev(SimpleCalcView):
                     keys_layout.addWidget(btn, 0, c)
                 else:
                     keys_layout.addWidget(btn, 0, c, 1, 2)
+                    
+                    
+class MathCalcView(SimpleCalcView):
+    pass
