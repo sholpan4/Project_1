@@ -7,13 +7,19 @@ from calc_control import CalcControlWidget
 
 
 def swich_mode(name):
-    if name == "Account":
-        model = AccountCalcModel()
-        view = AccountCalcViev()
+    if name == 'Простой':
+        model = SimpleCalcModel()
+        view = SimpleCalcView()
         view.set_model(model)
         window.set_view(view)
         
-    if name == ""
+    if name == 'Бухгалтерский':
+        model = AccountCalcModel()
+        view = AccountCalcView()
+        view.set_model(model)
+        window.set_view(view)
+        
+    if name == 'Математический'
         model = MathCalcModel()
         view = MathCalcView()
         view.set_model(model)
