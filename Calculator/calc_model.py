@@ -55,3 +55,7 @@ class AccountCalcModel(SimpleCalcModel):
             self._display += str(res1)
         else:
             super().command(key)
+            
+            
+class MathCalcModel(SimpleCalcModel):
+    pass
