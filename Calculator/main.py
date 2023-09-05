@@ -14,7 +14,7 @@ def swich_mode(name):
         window.set_view(view)
         
     if name == ""
-        model = MathCalcMorel()
+        model = MathCalcModel()
         view = MathCalcView()
         view.set_model(model)
         window.set_view(view)
