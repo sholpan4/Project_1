@@ -23,10 +23,10 @@ class SimpleCalcView(QWidget):
             
         self.calc_model.command(key_text)
         self.result_label.setText(self.calc_model.get_display())
+        
     def __init__(self):
         super().__init__()
         central_widget = QWidget()
-
         main_layout = QVBoxLayout(central_widget)
 
         self.result_label = QLabel("0")

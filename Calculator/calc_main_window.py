@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import *
 
 class CalcMainWindow(QMainWindow):
     calc_view = None
+    
     def __init__(self, title):
         super().__init__()
         self.setWindowTitle(title)
@@ -9,7 +10,6 @@ class CalcMainWindow(QMainWindow):
         self.calc_layout = QGridLayout()
         main_widget.setLayout(self.calc_layout)
         self.setCentralWidget(main_widget)
-
 
     def set_view(self, view):
         if self.calc_view:

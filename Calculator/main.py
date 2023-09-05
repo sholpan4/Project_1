@@ -5,11 +5,13 @@ from calc_view import *
 from calc_model import *
 from calc_control import CalcControlWidget
 
+
 options = {
     "Простой": {"model": SimpleCalcModel, "view": SimpleCalcView},
     "Бухгалтерский": {"model": AccountCalcModel, "view": AccountCalcView},
     # "Математический": {"model": MathCalcModel, "view": MathCalcView}
 }
+
 
 def swich_mode(name):
     if name in options:
