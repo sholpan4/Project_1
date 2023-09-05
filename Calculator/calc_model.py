@@ -38,6 +38,7 @@ class SimpleCalcModel:
 
 
 class AccountCalcModel(SimpleCalcModel):
+
     def command(self, key: str):
         if key in "()":
             self._display += key

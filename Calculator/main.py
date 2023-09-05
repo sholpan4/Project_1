@@ -15,11 +15,11 @@ def swich_mode(name):
         
     if name == 'Бухгалтерский':
         model = AccountCalcModel()
-        view = AccountCalcView()
+        view = AccountCalcViev()
         view.set_model(model)
         window.set_view(view)
         
-    if name == 'Математический'
+    if name == 'Математический':
         model = MathCalcModel()
         view = MathCalcView()
         view.set_model(model)

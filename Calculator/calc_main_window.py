@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QMainWindow
+from PyQt6.QtWidgets import *
 
 class CalcMainWindow(QMainWindow):
     calc_view = None
