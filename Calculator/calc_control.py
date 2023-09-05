@@ -27,3 +27,7 @@ class CalcControlWidget(QWidget):
         rb_account = QRadioButton(text='Бухгалтерский')
         rb_account.toggled.connect(self.calc_mode_switch)
         main_layout.addWidget(rb_account)
+
+        rb_math = QRadioButton(text='Математический')
+        rb_math.toggled.connect(self.calc_mode_switch)
+        main_layout.addWidget(rb_math)
