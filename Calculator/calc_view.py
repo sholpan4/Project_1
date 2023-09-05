@@ -55,3 +55,21 @@ class SimpleCalcView(QWidget):
         self.calc_model = model
         self.result_label.setText(self.calc_model.get_display())
 
+
+class AccountCalcViev(SimpleCalcView):
+    def __init__(self):
+        super().__init__()
+        keys_layout = QGridLayout()
+        self.layout().addLayout(keys_layout)
+        
+        keys = ('(', ')', '%', '')
+
+        for c in range(len(keys)):
+            key = keys[c]
+            if key:
+                btn = QPushButton(text=key)
+                btn.clicked.connect(self.on_button_pressed)
+                if key != '%':
+                    keys_layout.addWidget(btn, 0, c)
+                else:
+                    keys_layout.addWidget(btn, 0, c, 1, 2)
