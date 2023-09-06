@@ -42,7 +42,7 @@ class AccountCalcModel(SimpleCalcModel):
     def command(self, key: str):
         if key in "()":
             self._display += key
-        elif key == "%":   #  3*7-1 => "3*7", "-100000000000.000"\
+        elif key == "%":   
             last_value_index = max(self._display.rfind("-"),
                                    self._display.rfind("+"),
                                    self._display.rfind("*"),
