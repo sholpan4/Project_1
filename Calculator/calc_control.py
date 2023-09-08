@@ -10,24 +10,15 @@ class CalcControlWidget(QWidget):
             text = radiobtn.text()
             self.switched.emit(text)
 
-    def __init__(self):  #второй аргумент key = None
+    def __init__(self, options):
         super().__init__()
-
-        central_widget = QWidget()
-        main_layout = QVBoxLayout(central_widget)
+        main_layout = QVBoxLayout()
         self.setLayout(main_layout)
 
-        label = QLabel('Выберите вид: ')  #можно удалить~
-        
-        rb_simple = QRadioButton(text='Простой')
-        rb_simple.setChecked(True)
-        rb_simple.toggled.connect(self.calc_mode_switch)
-        main_layout.addWidget(rb_simple)
+        for i in range(len(options)):
+            radiobutton = QRadioButton(text=options[i])
+            radiobutton.toggled.connect(self.calc_mode_switch)
+            main_layout.addWidget(radiobutton)
 
-        rb_account = QRadioButton(text='Бухгалтерский')
-        rb_account.toggled.connect(self.calc_mode_switch)
-        main_layout.addWidget(rb_account)
-
-        rb_math = QRadioButton(text='Математический')
-        rb_math.toggled.connect(self.calc_mode_switch)
-        main_layout.addWidget(rb_math)
+            if i == 0:
+                radiobutton.setChecked(True)
