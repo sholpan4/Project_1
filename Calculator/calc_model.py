@@ -41,19 +41,19 @@ class AccountCalcModel(SimpleCalcModel):
 
     def command(self, key: str):
         if key in "()":
-            self._display += key
+            self.__display += key
         elif key == "%":   
-            last_value_index = max(self._display.rfind("-"),
-                                   self._display.rfind("+"),
-                                   self._display.rfind("*"),
-                                   self._display.rfind("/"))
+            last_value_index = max(self.__display.rfind("-"),
+                                   self.__display.rfind("+"),
+                                   self.__display.rfind("*"),
+                                   self.__display.rfind("/"))
             if last_value_index < 0:
                 return
-            last_value = self._display[last_value_index:]
-            self._display = self._display[:last_value_index]
+            last_value = self.__display[last_value_index:]
+            self.__display = self.__display[:last_value_index]
             self.calculate()
-            res1 = eval(f"{self._display}*{last_value}/100")
-            self._display += str(res1)
+            res1 = eval(f"{self.__display}*{last_value}/100")
+            self.__display += str(res1)
         else:
             super().command(key)
             
