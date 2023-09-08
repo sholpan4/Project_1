@@ -49,7 +49,8 @@ if __name__ == '__main__':
     style = fb.read()
     fb.close()
 
-    switch = CalcControlWidget()
+    # switch = CalcControlWidget()
+    switch = CalcControlWidget(tuple(options.keys()))
     switch.switched.connect(swich_mode)
     window.set_switcher(switch)
 
