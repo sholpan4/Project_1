@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import *
 
 class CalcMainWindow(QMainWindow):
     calc_view = None
-    
+    calc_layout = None
     def __init__(self, title):
         super().__init__()
         self.setWindowTitle(title)

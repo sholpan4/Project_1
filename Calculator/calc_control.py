@@ -10,14 +10,14 @@ class CalcControlWidget(QWidget):
             text = radiobtn.text()
             self.switched.emit(text)
 
-    def __init__(self):
+    def __init__(self):  #второй аргумент key = None
         super().__init__()
 
         central_widget = QWidget()
         main_layout = QVBoxLayout(central_widget)
         self.setLayout(main_layout)
 
-        label = QLabel('Выберите вид: ')
+        label = QLabel('Выберите вид: ')  #можно удалить~
         
         rb_simple = QRadioButton(text='Простой')
         rb_simple.setChecked(True)
