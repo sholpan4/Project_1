@@ -13,25 +13,27 @@ from account_calc_model import *
 options = {
     "Простой": {"model": SimpleCalcModel, "view": SimpleCalcView},
     "Бухгалтерский": {"model": AccountCalcModel, "view": AccountCalcView},
-    "Математический": {"model": MathCalcModel, "view": MathCalcView}
+    "Математический": {"model": MathCalcModel, "view": MathCalcView},
+    "Математический Стиль": {"style": "Calculator/MathStyle.css"},
+    "Бухгалтерский Стиль": {"style": "Calculator/AccStyle.css"}
 }
 
 
 def swich_mode(name):
-    if name in options:
-        model = options[name]["model"]()
-        view = options[name]["view"]()
-        view.set_model(model)
-        window.set_view(view)
+    if "Стиль" in name:
+        with open(options[name]["style"], "r", encoding='utf-8') as file:
+            app.setStyleSheet(file.read())
+    else:
+        if name in options:
+            model = options[name]["model"]()
+            view = options[name]["view"]()
+            view.set_model(model)
+            window.set_view(view)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = CalcMainWindow('Qalculus v. 1.0')
-    
-    fb = open("Calculator/style.css", 'r', encoding="utf-8")
-    style = fb.read()
-    fb.close()
-
 
     switch = CalcControlWidget(tuple(options.keys()))
     switch.switched.connect(swich_mode)
@@ -40,5 +42,4 @@ if __name__ == '__main__':
     swich_mode("Простой")
     
     window.show()
-    app.setStyleSheet(style)
     app.exec()

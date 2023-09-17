@@ -8,11 +8,11 @@ class SimpleCalcView(QWidget):
     calc_model = None
 
     buttons = [
-        ('AC', 0, 0), ('C', 0, 1), ('', 0, 2), ('/', 0, 3),
+        ('AC', 0, 0), ('C', 0, 1), ('.', 0, 2), ('/', 0, 3),
         ('7', 1, 0), ('8', 1, 1), ('9', 1, 2), ('*', 1, 3),
         ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('-', 2, 3),
         ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('+', 3, 3),
-        ('0', 4, 0), ('.', 4, 2), ('=', 4, 3)
+        ('0', 4, 0), ('(',4,1),(')', 4, 2), ('=', 4, 3)
     ]
 
     def on_button_pressed(self):
@@ -52,10 +52,7 @@ class SimpleCalcView(QWidget):
         buttons_layout = QGridLayout()
         for (text, row, col) in buttons:
             button = QPushButton(text)
-            if text != '0':
-                buttons_layout.addWidget(button, row, col)
-            else:
-                buttons_layout.addWidget(button,row,col,1,2)
+            buttons_layout.addWidget(button, row, col)
 
             button.setFont(QFont('Monospace', 10, QFont.Weight.Normal, False))
 
