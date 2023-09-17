@@ -23,6 +23,7 @@ def swich_mode(name):
     if "Стиль" in name:
         with open(options[name]["style"], "r", encoding='utf-8') as file:
             app.setStyleSheet(file.read())
+            app.setStyleSheet(file.close())
     else:
         if name in options:
             model = options[name]["model"]()
