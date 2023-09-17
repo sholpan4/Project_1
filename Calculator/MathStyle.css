@@ -1,31 +1,32 @@
 QWidget {
-    background-color: #686868;
-    color: "white";
+    background-color: rgb(167, 163, 163);
+    color: white;
 }
 QPushButton {
-    background-color: rgb(167, 163, 163);
-    border: 2px solid black;
-    border-radius: 10px;
-    color: black;
+    background-color: white;
+    height: 50%;
+    width: 50%;
+    border-radius: 25%;
+    color: rgb(76, 186, 255);
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
 QLineEdit {
-    background-color: "white";
-    color: "white";
+    background-color: rgb(167, 163, 163);
+    color: white;
 }
 QMainWindow {
     background-color: rgb(167, 163, 163);
 }
 
 QPushButton:hover{
-    background-color: white
+    background-color: rgb(76, 186, 255);
+    color: white;
 }
 
 QLabel {
-    border: 2px solid black;
     background-color: white;
     border-radius: 10px;
-    color: black;
+    color: rgb(76, 186, 255);
 }
