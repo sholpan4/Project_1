@@ -64,9 +64,3 @@ class SimpleCalcView(QWidget):
     def set_model(self, model):
         self.calc_model = model
         self.result_label.setText(self.calc_model.get_display())
-
-
-class AccountCalcView(SimpleCalcView):
-    pass
-
-
